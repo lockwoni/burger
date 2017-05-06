@@ -3,7 +3,7 @@ var mysql = require("mysql");
 
 // Creating the connection variable
 var connection;
-var PORT = process.env.PORT || 8000
+var PORT = process.env.PORT || 8000;
 
 // Setting up the connection to the database for use on heroku or locally
 if (process.env.JAWSDB_URL) {

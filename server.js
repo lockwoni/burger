@@ -5,7 +5,7 @@ var methodOverride = require("method-override");
 
 var app = express();
 
-var port = 3000;
+var PORT = process.env.PORT || 8000;
 
 // Serving static content for the app from the "public" directory in the app directory
 app.use(express.static(process.cwd() + "/public"));
@@ -25,6 +25,6 @@ var routes = require("./controllers/burgers_controller.js");
 
 app.use("/", routes);
 
-app.listen(port, function() {
-  console.log("Listening on PORT " + port);
+app.listen(PORT, function() {
+  console.log("Listening on PORT " + PORT);
 });
