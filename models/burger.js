@@ -1,3 +1,4 @@
+// Importing the orm.js file
 var orm = require("../config/orm.js");
 
 // Calling the ORM functions using burger-specific input for the ORM 

@@ -1,6 +1,7 @@
+// Importing the connection.js file
 var connection = require("../config/connection.js");
 
-// Helper function for SQL syntax
+// Creating the function to dynamically add the correct number of ?'s to the SQL syntax
 function printQuestionMarks(num) {
   var arr = [];
 
@@ -11,7 +12,7 @@ function printQuestionMarks(num) {
   return arr.toString();
 }
 
-// Helper function for SQL syntax
+// Creating helper function for the SQL syntax
 function objToSql(ob) {
   var arr = [];
 
@@ -24,8 +25,9 @@ function objToSql(ob) {
   return arr.toString();
 }
 
-// Object for all our SQL statement functions
+// Creating the object for all of the methods needed to retrieve & store data in the SQL database
 var orm = {
+  // Creating the method to retrieve all of the burgers (and the rest of the data) from the database
   selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
@@ -35,6 +37,7 @@ var orm = {
       cb(result);
     });
   },
+  // Creating the method to add a new burger
   insertOne: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
@@ -54,6 +57,7 @@ var orm = {
       cb(result);
     });
   },
+  // Creating the method to update the "devoured" boolean in the database
   updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -67,7 +71,6 @@ var orm = {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   }

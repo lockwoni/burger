@@ -1,6 +1,7 @@
-// Set up MySQL connection
+// Importing the needed node packages
 var mysql = require("mysql");
 
+// Setting up the connection to the database
 var connection = mysql.createConnection({
   port: 3306,
   host: "localhost",

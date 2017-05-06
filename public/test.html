@@ -1,9 +1,9 @@
+<!--NOTE: This is a test file that was used to layout the html for the index.handlebars file-->
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="../../public/assets/css/reset.css">
+		<title>Eat-Da-Burger</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://bootswatch.com/sandstone/bootstrap.min.css">
 		<link rel="stylesheet" href="../../public/assets/css/style.css">	
@@ -13,8 +13,8 @@
 	<div class=container>
 		<div class="row">
 			<div class="col-md-12">
-				<img src="../public/assets/img/burger.png" class="img-responsive center-block" style="max-width: 200px; margin-top: 20px;" alt="Responsive image">
-			</div>
+				<img src="./assets/img/burger.png" class="img-responsive center-block" style="max-width: 200px; margin-top: 20px;" alt="Responsive image">
+				</div>
 		</div>
 
 		<div class="row">
@@ -27,21 +27,30 @@
 			<div class="col-md-2">
 			</div>
 
+			<div class="col-md-5">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="panel panel-default">
+							<div class="panel-body" style="font-family: 'Love Ya Like A Sister', cursive;">
+								Burger info here (if not devoured)
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<form action="/{{this.id}}?_method=PUT" method="POST">
+				        	<input type="hidden" name="devoured" value="true">
+				          	<button type="submit" class="btn btn-success" style="font-family: 'Rock Salt', cursive;">Devour it!</button>
+				        </form>
+				    </div>
+		        </div>
+			</div>
+
 			<div class="col-md-3">
 				<div class="panel panel-default">
-				  <div class="panel-body" style="font-family: 'Love Ya Like A Sister', cursive;">
-				    Panel content
-				  </div>
-				</div>
-			</div>
-
-			<div class="col-md-2">
-				<a href="#" class="btn btn-success" style="font-family: 'Rock Salt', cursive;">Devour it!</a>
-			</div>
-
-			<div class="col-md-3">
-				<div class="form-group">
-				  <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="" style="font-family: 'Love Ya Like A Sister', cursive;">
+					<div class="panel-body" style="font-family: 'Love Ya Like A Sister', cursive; color: #98978b; background-color: #f8f5f0">
+						Burger info here (if devoured)
+					</div>
 				</div>
 			</div>
 
@@ -54,13 +63,16 @@
 			</div>
 
 			<div class="col-md-6">
-				<div class="form-group">
-				  <label class="control-label" for="focusedInput" style="font-family: 'Love Ya Like A Sister', cursive;">Your burger:</label>
-				  <input class="form-control" id="focusedInput" type="text" placeholder="Burger order..." style="font-family: 'Love Ya Like A Sister', cursive;">
-				</div>
-				<div class="form-group">
-		      <button type="submit" class="btn btn-warning center-block" style="font-family: 'Rock Salt', cursive;">Submit</button>
-	    	</div>
+				<form class="create-update-form" action="/" method="POST">
+					<div class="form-group">
+				  	<label class="control-label" for="focusedInput" style="font-family: 'Love Ya Like A Sister', cursive;">Your burger:</label>
+						<input class="form-control" id="focusedInput" type="text" placeholder="Burger order..." style="font-family: 'Love Ya Like A Sister', cursive;" name="burger_name">
+					</div>
+					
+					<div class="form-group">
+				    	<button type="submit" class="btn btn-warning center-block" style="font-family: 'Rock Salt', cursive;">Submit</button>
+			    	</div>
+			  	</form>
 			</div>
 
 			<div class="col-md-3">
@@ -75,6 +87,5 @@
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-	<script type="text/javascript" src="../../public/assets/javascript/app.js"></script>
 </body>
 </html>

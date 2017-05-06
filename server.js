@@ -7,11 +7,11 @@ var app = express();
 
 var port = 3000;
 
-// Serving static content for the app from the "public" directory in the application directory
+// Serving static content for the app from the "public" directory in the app directory
 app.use(express.static(process.cwd() + "/public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Override with POST having ?_method=DELETE
+// Overriding with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
 
 // Setting Handlebars
