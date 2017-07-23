@@ -30,3 +30,10 @@ body {
 	color: #98978b;
 	background-color: #f8f5f0
 }
+
+
+/*Formatting the divs holding burger lists*/
+.uneaten-list, .eaten-list {
+	max-height: 300px;
+	overflow-y:auto;
+}
